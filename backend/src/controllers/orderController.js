@@ -9,9 +9,9 @@ const createOrder = async (req, res) => {
   }
 };
 
-const getMyOrders = async (req, res) => {
+const getOrders_by_cusid = async (req, res) => {
   try {
-    const orders = await orderService.getMyOrders(req.user._id);
+    const orders = await orderService.getOrders_by_cusid(req.user._id);
     res.status(200).json({ success: true, data: orders });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
@@ -36,4 +36,4 @@ const updateOrderStatus = async (req, res) => {
   }
 };
 
-module.exports = { createOrder, getMyOrders, getAllOrders, updateOrderStatus };
+module.exports = { createOrder, getOrders_by_cusid, getAllOrders, updateOrderStatus };

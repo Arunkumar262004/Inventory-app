@@ -15,7 +15,7 @@ const createOrder = async (userId, orderData) => {
   return order;
 };
 
-const getMyOrders = async (userId) => {
+const getOrders_by_cusid = async (userId) => {
   return await Order.find({ user: userId }).sort({ createdAt: -1 });
 };
 
@@ -29,4 +29,4 @@ const updateOrderStatus = async (id, status) => {
   return order;
 };
 
-module.exports = { createOrder, getMyOrders, getAllOrders, updateOrderStatus };
+module.exports = { createOrder, getOrders_by_cusid, getAllOrders, updateOrderStatus };
